@@ -35,13 +35,13 @@ package utils
             
             _unfogArea = new Shape;
             _fogContainer = new Sprite;
-            container.addChild(background);
             container.addChild(_fogContainer);
+            container.addChild(background);
             
-            _fogContainer.blendMode = BlendMode.LAYER;
-            _unfogArea.blendMode = BlendMode.ERASE;
+//            _fogContainer.blendMode = BlendMode.LAYER;
+//            _unfogArea.blendMode = BlendMode.ERASE;
 //            _unfogArea.alpha = 0;
-//            _fogContainer.mask = _unfogArea
+            background.mask = _unfogArea
             
             if(_fog is uint)
             {
@@ -59,7 +59,7 @@ package utils
             }
                 
             
-            _fogContainer.addChild(_unfogArea);
+            container.addChild(_unfogArea);
             
         }
         
