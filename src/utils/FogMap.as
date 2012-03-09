@@ -1,6 +1,5 @@
 package utils
 {
-    import flash.display.BlendMode;
     import flash.display.DisplayObject;
     import flash.display.DisplayObjectContainer;
     import flash.display.Shape;
@@ -38,9 +37,6 @@ package utils
             container.addChild(_fogContainer);
             container.addChild(background);
             
-//            _fogContainer.blendMode = BlendMode.LAYER;
-//            _unfogArea.blendMode = BlendMode.ERASE;
-//            _unfogArea.alpha = 0;
             background.mask = _unfogArea
             
             if(_fog is uint)
@@ -81,7 +77,7 @@ package utils
                 _fogContainer.addChildAt(_fog as DisplayObject,0);
             }
             _unfogArea.graphics.clear();
-//            _oldX = NaN;
+            _oldX = NaN;
         }
         
         public function seeAt(x:Number,y:Number):void
@@ -95,22 +91,6 @@ package utils
         
         public function seeTo(x:Number,y:Number):void
         {
-            if(!isNaN(_oldX))
-            {
-//                _unfogArea.graphics.beginFill(0);
-//                _unfogArea.graphics.moveTo(x,y+_unfogUnitRadius);
-//                _unfogArea.graphics.lineTo(x,y -_unfogUnitRadius);
-//                _unfogArea.graphics.lineTo(_oldX,_oldY-_unfogUnitRadius);
-//                _unfogArea.graphics.lineTo(_oldX,_oldY+_unfogUnitRadius);
-//                _unfogArea.graphics.endFill();
-                
-                _unfogArea.graphics.beginFill(0);
-                _unfogArea.graphics.drawCircle(x,y,_unfogUnitRadius);
-                _unfogArea.graphics.endFill();
-                
-            }
-            _oldX = x;
-            _oldY = y;
         }
     }
 }

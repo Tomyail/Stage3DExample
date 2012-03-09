@@ -1,14 +1,13 @@
 package
 {
-    import display.BrushShape;
-    import utils.FogMap;
-    
     import flash.display.Bitmap;
     import flash.display.Sprite;
     import flash.events.Event;
     import flash.events.KeyboardEvent;
     import flash.events.MouseEvent;
     import flash.ui.Keyboard;
+    
+    import utils.FogMap;
     
     public class WarFogTest extends Sprite
     {
@@ -22,17 +21,24 @@ package
             bg = new bgClass;
             this.graphics.beginFill(0x00ff00);
 //            this.graphics.drawRect(0,0,500,500);
-            warFog = new FogMap(0xff0000,bg,this);
-            warFog.seeTo(10,50);
-            warFog.seeTo(60,60);
-            warFog.seeTo(70,70);
-            warFog.seeTo(80,80);
+            warFog = new FogMap(0xff0000,bg,this,10);
+            warFog.seeAt(10,50);
+            warFog.seeAt(60,60);
+            warFog.seeAt(70,70);
+            warFog.seeAt(80,80);
             
-            this.addEventListener(MouseEvent.MOUSE_MOVE,onMouseMove);
+//            this.addEventListener(MouseEvent.MOUSE_MOVE,onMouseMove);
+            this.addEventListener(MouseEvent.CLICK,onClick);
 //            this.addEventListener(Event.ENTER_FRAME,onEnterFrame);
             stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
             mx = 0;
             my = 0;
+        }
+        
+        
+        private function onClick(e:MouseEvent):void
+        {
+            warFog.seeAt(mouseX,mouseY);
         }
         
         private function onKeyDown(e:KeyboardEvent):void
@@ -46,12 +52,12 @@ package
         
         private function onEnterFrame(e:Event):void
         {
-            warFog.seeTo(mx+1,my+1);
+            warFog.seeAt(mx+1,my+1);
         }
         
         private function onMouseMove(e:MouseEvent):void
         {
-            warFog.seeTo(mouseX,mouseY);
+            warFog.seeAt(mouseX,mouseY);
         }
     }
 }
