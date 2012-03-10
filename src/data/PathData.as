@@ -11,12 +11,12 @@ package data
         {
             _link = new Vector.<int>();
         }
-        public function addLinks(...args):void
+        public function addLinks(datas:Array):void
         {
 //            _link[_link.length-1] = id;
-            for(var i:int = 0;i< args.length;i++)
+            for(var i:int = 0;i< datas.length;i++)
             {
-                _link[_link.length-1] = args[i];
+                _link.push(datas[i]);
             }
         }
         

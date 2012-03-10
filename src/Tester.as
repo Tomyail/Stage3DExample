@@ -3,6 +3,7 @@ package
     import flash.display.Sprite;
     import flash.events.Event;
     
+    import test.utils.TestMapPathManager;
     import test.utils.TestPathDatasAdapter;
     
     public class Tester extends Sprite
@@ -15,7 +16,8 @@ package
         
         private function init(e:Event):void
         {
-            var testPathDatasAdapter:TestPathDatasAdapter = new TestPathDatasAdapter();
+//            var testPathDatasAdapter:TestPathDatasAdapter = new TestPathDatasAdapter();
+            var testMapPathManager:TestMapPathManager = new TestMapPathManager(this);
         }
     }
 }

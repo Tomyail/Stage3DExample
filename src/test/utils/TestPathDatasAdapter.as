@@ -1,5 +1,7 @@
 package test.utils
 {
+    import data.PathData;
+    
     import utils.PathDatasAdapter;
 
     public class TestPathDatasAdapter
@@ -19,8 +21,11 @@ package test.utils
 
         public function TestPathDatasAdapter()
         {
-            var pda:PathDatasAdapter = new PathDatasAdapter();
-            pda.adaptive(data)
+            var result:Vector.<PathData> = PathDatasAdapter.adaptive(data);
+            for(var i:int = 0;i< result.length;i++)
+            {
+                trace(result[i].link.length);
+            }
         }
     }
 }

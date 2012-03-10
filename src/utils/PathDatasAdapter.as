@@ -22,7 +22,7 @@ package utils
          * etc... 
          * }
          */
-        public function adaptive(data:Object):Vector.<PathData>
+        public static function adaptive(data:Object):Vector.<PathData>
         {
             
             var result:Vector.<PathData> = new Vector.<PathData>;

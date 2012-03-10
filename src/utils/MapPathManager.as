@@ -29,6 +29,7 @@ package utils
                 _paths[i] = new GridUnit(20,20);
                 _paths[i].x = _pathDatas[i].x;
                 _paths[i].y = _pathDatas[i].y;
+                _paths[i].setDebugInfo(String(_pathDatas[i].id));
                 _container.addChild(_paths[i]);
                 
                 if(_pathDatas[i].link.length >0)
@@ -41,7 +42,7 @@ package utils
             }
         }
         
-        public function set setPathDatas(datas:Vector.<PathData>):void
+        public function setPathDatas(datas:Vector.<PathData>):void
         {
             _pathDatas = datas;
         }
