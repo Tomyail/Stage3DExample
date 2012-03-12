@@ -12,10 +12,12 @@ package utils
         private var _pathDatas:Vector.<PathData>;
         private var _paths:Vector.<GridUnit>;
         private var _container:Sprite;
+        private var _pathLayer:Sprite;
         private var l:int,i:int,j:int;
-        public function MapPathManager(container:Sprite)
+        public function MapPathManager(container:Sprite,pathLayer:Sprite)
         {
             _container = container;
+            _pathLayer = pathLayer;
             _pathDatas = new Vector.<PathData>();
             _paths = new Vector.<GridUnit>();
         }
@@ -40,6 +42,7 @@ package utils
                     }
                 }
             }
+            _container.addChild(_pathLayer);
         }
         
         public function setPathDatas(datas:Vector.<PathData>):void
@@ -49,10 +52,10 @@ package utils
         
         private function draw(startX:Number,startY:Number,endX:Number,endY:Number):void
         {
-            _container.graphics.lineStyle(1);
-            _container.graphics.moveTo(startX,startY);
-            _container.graphics.lineTo(endX,endY);
-            _container.graphics.endFill();
+            _pathLayer.graphics.lineStyle(1);
+            _pathLayer.graphics.moveTo(startX,startY);
+            _pathLayer.graphics.lineTo(endX,endY);
+            _pathLayer.graphics.endFill();
         }
     }
 }

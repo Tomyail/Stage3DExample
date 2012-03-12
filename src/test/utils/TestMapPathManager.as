@@ -18,9 +18,9 @@ package test.utils
                 {id:5,x:10,y:200,l:""}
             ]
         );
-        public function TestMapPathManager(ct:Sprite)
+        public function TestMapPathManager(ct:Sprite,layer:Sprite)
         {
-            var mpm:MapPathManager = new MapPathManager(ct);
+            var mpm:MapPathManager = new MapPathManager(ct,layer);
             mpm.setPathDatas(PathDatasAdapter.adaptive(data));
             mpm.createPaths();
         }

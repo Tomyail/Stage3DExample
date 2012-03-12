@@ -9,8 +9,10 @@ package
     
     public class Tester extends Sprite
     {
+        private var _layer:Sprite;
         public function Tester()
         {
+            _layer = new Sprite();
             addEventListener(Event.ADDED_TO_STAGE,init);
         }
         
@@ -18,8 +20,8 @@ package
         private function init(e:Event):void
         {
 //            var testPathDatasAdapter:TestPathDatasAdapter = new TestPathDatasAdapter();
-//            var testMapPathManager:TestMapPathManager = new TestMapPathManager(this);
-            var testVehicleProxy:TestVehicleProxy = new TestVehicleProxy(this);
+            var testMapPathManager:TestMapPathManager = new TestMapPathManager(this,_layer);
+//            var testVehicleProxy:TestVehicleProxy = new TestVehicleProxy(this);
         }
     }
 }
